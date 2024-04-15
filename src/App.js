@@ -1,7 +1,8 @@
-import logo from './logo.svg';
-import './App.css';
-
+import logo from "./logo.svg";
+import "./App.css";
+import React from "react";
 function App() {
+  const [counter, setCounter] = React.useState(0);
   return (
     <div className="App">
       <header className="App-header">
@@ -9,14 +10,11 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+          <button onClick={() => setCounter((p) => p - 1)}>-</button>
+          <p>{counter}</p>
+          <button onClick={() => setCounter((p) => p + 1)}>+</button>
+        </div>
       </header>
     </div>
   );
